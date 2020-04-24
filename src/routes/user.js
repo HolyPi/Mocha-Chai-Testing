@@ -48,11 +48,10 @@ router.put('/:userId', (req, res) => {
 })
 
 /** Route to delete a user. */
-// DELETE localhost:3000/users/:userId
 router.delete('/:userId', (req, res) => {
     User.findByIdAndDelete(req.params.userId).then((result) => {
         if (result === null) {
-            return res.json({message: 'User does not exist.'})
+            return res.json({message: 'Message does not exist.'})
         }
         return res.json({
             'message': 'Successfully deleted.',
